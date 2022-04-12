@@ -1,0 +1,9 @@
+function sameCase(a, b){
+    const letter = "abcdefghijklmnopqrstuvwxyz"
+    if(!letter.includes(a.toLowerCase()) || !letter.includes(b.toLowerCase())) return -1
+      const checkCase = x => {
+        if(x === x.toLowerCase()) return "lower"
+        if(x === x.toUpperCase()) return "upper"
+      }
+    return checkCase(a) === checkCase(b) ? 1 : 0
+  }
