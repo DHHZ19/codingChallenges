@@ -1,0 +1,38 @@
+var humanYearsCatYearsDogYears = function(humanYears) {
+  
+    let dogYears = (humanYears) => {
+      for(let i = 0; humanYears >= i; i++){
+        if(i == 0){
+           dogActualYears = 1 * 15
+        }else if( i == 1){
+          dogActualYears = dogActualYears + 9 
+        }else{
+          dogActualYears =  dogActualYears + 5;
+        }
+      }
+      return dogActualYears
+    }
+    
+    
+    let catYears = (humanYears) => {
+      for(let i = 0; humanYears >= i; i++){
+        if(i == 0){
+           catActualYears = 1 * 15
+        }else if( i == 1){
+          catActualYears = catActualYears + 9
+        }else{
+          catActualYears += 4;
+        }
+      }
+      return catActualYears
+    }
+    dogYears(humanYears)
+    catYears(humanYears)
+    let array =[0,0,0]
+    array[2] = dogActualYears
+    array[1] = catActualYears
+    array[0]  = humanYears
+  return array;
+  }
+
+  //incorrect solution first of all you try to make two functions when you should instead make a for loop and create two vaiables to update your array.
