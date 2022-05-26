@@ -1,3 +1,3 @@
 # codingChallenges
 
-Here is where I push all my daily coding Challenges from codeWars
+Here is where I push all my daily coding Challenges from codeWars🤓
