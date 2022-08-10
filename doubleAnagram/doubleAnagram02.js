@@ -1,4 +1,5 @@
 function makeHash(str) {
+  // fun coding challenge
   //Make an array with 26 slots filled with 0s
   const count = Array(26).fill(0);
   for (let i = 0; i < str.length; i++) {
