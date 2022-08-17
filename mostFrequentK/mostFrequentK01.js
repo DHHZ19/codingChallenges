@@ -1,31 +1,45 @@
-let map = {};
-let res = [];
-const nums = [1, 1, 1, 2, 2, 3];
-var topKFrequent = function (nums, k) {
-  let map = {};
-  let res = [];
-  let bucket = Array.from({ length: nums.length + 1 }, () => []); // to create unique arrays
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+  PREP
+  P: array of nums, a number k the (the number to check for)
+  R: returns an array of the k most frequent numbers
+  E: topKFrequent([1,2,3,4,4,4, 1], 2) // [4,1]
+  [12,13,14,15,16,15]
+ */
 
-  // storing frequency of numbers in a map
-  for (const n of nums) {
-    map[n] = n in map ? 1 + map[n] : 1;
+var topKFrequent = function (nums, k) {
+  let res = [];
+  let map = {};
+  // create the bucket
+  let bucket = Array.from({ length: nums.length + 1 }, () => []);
+
+  // sets the number of times each number occurs
+  for (let i = 0; i < nums.length; i++) {
+    nums[i] in map ? (map[nums[i]] = map[nums[i]] + 1) : (map[nums[i]] = 1);
   }
-  console.log(map);
-  // Populate the bucket with numbers in frequency
-  // as the index of the bucket
+
+  //  sets the number of frequency to the index
+  // for(let i = 0; i < bucket.length; i++){
+  //     if(i in map){
+  //         console.log(i)
+  //        bucket[i].push(map[i])
+  //     }
+  // }
   for (const c in map) {
+    console.log(c);
     bucket[map[c]].push(c);
   }
+  console.log(map);
   console.log(bucket);
-  console.log(bucket[2]);
-
+  // pushing to res array
   for (let i = bucket.length - 1; i >= 0; i--) {
     if (bucket[i].length > 0) {
-      bucket[i].forEach((elem) => res.push(elem));
+      bucket[i].forEach((el) => res.push(el));
       if (k == res.length) {
         return res;
       }
     }
   }
 };
-topKFrequent(nums, 2);

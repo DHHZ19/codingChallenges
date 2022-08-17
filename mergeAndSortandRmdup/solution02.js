@@ -1,5 +1,5 @@
 // uses two important methods
-// Array.from()
+// Array.from() turns into an array from an array like object
 // Set() // keeps unique values
 
 function mergeArrays(arr1, arr2) {
