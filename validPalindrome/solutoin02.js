@@ -1,4 +1,5 @@
 // better solution :)
+// a nice solution :)
 var isPalindrome = function (s) {
   let leftPointer = 0;
   let rightPointer = s.length - 1;
