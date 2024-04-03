@@ -1,7 +1,11 @@
-function outer(x) {
-  return function inner(y) {
-    return x + y;
-  };
-}
-const out = outer(2);
-console.log(out(3));
+let user = { name: "foo" };
+
+const userData = new WeakMap();
+
+console.log(userData.set(user, { yup: 1 }));
+
+user = null;
+
+console.log(userData.get(user));
+
+console.log(userData.keys());
