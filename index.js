@@ -1,11 +1,13 @@
-let user = { name: "foo" };
+// Implement Function.prototype.bind()
 
-const userData = new WeakMap();
+/*
+    const foo = function() {
+        console.log(this.bar);
+    }
 
-console.log(userData.set(user, { yup: 1 }));
+    let baz = foo.bind({bar: 'hello'})
 
-user = null;
+    baz(); // Hello
+*/
 
-console.log(userData.get(user));
-
-console.log(userData.keys());
+function bind(prototype) {}
