@@ -1,13 +1,19 @@
-// Implement Function.prototype.bind()
+// Create a sleep function that takes one parameter (time) and
+// will wait "time" ms
 
-/*
-    const foo = function() {
-        console.log(this.bar);
-    }
+async function run() {
+  await sleep(500);
+  console.log("hello");
+  await sleep(500);
+  console.log("world");
+}
 
-    let baz = foo.bind({bar: 'hello'})
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  });
+}
 
-    baz(); // Hello
-*/
-
-function bind(prototype) {}
+run();
