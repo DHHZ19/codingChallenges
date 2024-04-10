@@ -1,17 +1,17 @@
 // remove duplicadtes from string
-const str = "this is is a test test string";
+let str = "this is is a test test string";
 
 function removeDuplicates() {
   const arr = str.split(" ");
 
   const wordSet = new Set(arr);
 
-  let newStr = "";
+  str = "";
   for (const word of wordSet.values()) {
-    newStr += newStr === "" ? `${word}` : ` ${word}`;
+    str += str === "" ? word : ` ${word}`;
   }
 
-  return newStr;
+  return str;
 }
 
 console.log(removeDuplicates(str));
